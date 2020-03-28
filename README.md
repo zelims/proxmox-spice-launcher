@@ -1,4 +1,4 @@
-## Proxmox Spice Launcher
+## Proxmox SPICE Launcher
 This program allows you to easily launch a Virtual Machine with a SPICE display.  
 Once compiled, execute the script with the VM ID as an argument.
 
