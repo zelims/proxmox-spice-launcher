@@ -11,9 +11,9 @@ import (
 	"strings"
 	"time"
 	"os/exec"
-    "path/filepath"
+	"path/filepath"
 	"encoding/json"
-    "crypto/tls"
+	"crypto/tls"
 	"github.com/tidwall/gjson"
 )
 
@@ -21,7 +21,7 @@ var config Config
 var spiceConfig Spice
 
 type Config struct {
-	ID 					int
+	ID 				int
 	Username 			string
 	Password 			string
 	Node 				string
@@ -36,7 +36,7 @@ type Spice struct {
 	Delete				int 	`json:"delete-this-file"`
 	Proxy				string 	`json:"proxy"`
 	Type				string 	`json:"type"`
-	CA					string 	`json:"ca"`
+	CA				string 	`json:"ca"`
 	Fullscreen			string 	`json:"toggle-fullscreen"`
 	Title				string 	`json:"title"`
 	Host				string 	`json:"host"`
@@ -115,7 +115,7 @@ func doRequest(request *http.Request) []byte {
 	client := &http.Client{}
 	resp, err := client.Do(request)
 	hasError("do.response", "", err)
-    defer resp.Body.Close()
+	defer resp.Body.Close()
 
 	body, err := ioutil.ReadAll(resp.Body)
 	
