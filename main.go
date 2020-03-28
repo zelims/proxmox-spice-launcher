@@ -162,8 +162,9 @@ func main() {
 
 	if status.String() == "stopped" {
 		fmt.Printf("ERROR: VM %d is not running. Attempting to start it", config.ID)
-		BuildRequest("GET", "/status/start", nil)
-		for i := 0; i < 15; i++ {
+		time.Sleep(500 * time.Millisecond)
+		BuildRequest("POST", "/status/start", nil)
+		for i := 0; i < 20; i++ {
 			fmt.Printf(".")
 			time.Sleep(250 * time.Millisecond)
 		}
